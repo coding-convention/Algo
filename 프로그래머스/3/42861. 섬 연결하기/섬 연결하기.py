@@ -4,9 +4,7 @@ def solution(n, costs):
     mask = set([costs[0][0]])
     while len(mask) != n:
         for c in costs:
-            if not((c[0] in mask) ^ (c[1] in mask)): 
-                continue
-            else:
+            if (c[0] in mask) ^ (c[1] in mask): 
                 mask.update(c[:2])
                 answer += c[2]
                 break
